@@ -1,0 +1,134 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #fff5f1, #ffe1d6);
+  color: #432818;
+  line-height: 1.5;
+}
+
+header {
+  background: linear-gradient(90deg, #d1603d, #ffa987);
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+header p.intro-text {
+  margin-top: 0.5rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.container {
+  max-width: 700px;
+  background: white;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  color: #b75226;
+  letter-spacing: 0.05em;
+}
+
+select, textarea, input[type="email"] {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #d98f6d;
+  transition: border-color 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+  resize: vertical;
+}
+
+select:focus, textarea:focus, input[type="email"]:focus {
+  border-color: #d1603d;
+  outline: none;
+  box-shadow: 0 0 8px rgba(209, 96, 61, 0.5);
+}
+
+.rating-group legend {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  color: #b75226;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+.stars {
+  display: inline-flex;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 2.8rem;
+  user-select: none;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.stars input[type="radio"] {
+  display: none;
+}
+
+.stars label {
+  color: #ddd;
+  padding: 0 8px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #ffc107;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 3px #ffb800);
+  z-index: 10;
+  position: relative;
+}
+
+.stars input[type="radio"]:checked ~ label {
+  color: #ffc107;
+}
+
+.submit-btn {
+  margin-top: 2.5rem;
+  background: linear-gradient(90deg, #e36414, #9a3412);
+  color: white;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 14px;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(227, 100, 20, 0.5);
+}
+
+.submit-btn:hover {
+  background: #7f2f10;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(127, 47, 16, 0.8);
+}
