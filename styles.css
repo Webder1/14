@@ -132,3 +132,33 @@ select:focus, textarea:focus, input[type="email"]:focus {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(127, 47, 16, 0.8);
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .stars {
+    font-size: 2.2rem;
+  }
+
+  header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  header p.intro-text {
+    font-size: 1rem;
+  }
+
+  .submit-btn {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+}
