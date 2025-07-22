@@ -34,3 +34,62 @@ setupStarRating('dessert-stars');
 setupStarRating('server-stars');
 
 // Optional: add form validation feedback here if you want to expand
+
+// Existing star rating code above here...
+
+// Modal elements
+const modal = document.getElementById('confirmationModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const feedbackForm = document.getElementById('feedbackForm');
+
+// Show modal function
+function showModal() {
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+  closeModalBtn.focus();
+}
+
+// Hide modal function
+function hideModal() {
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+  feedbackForm.querySelector('button[type="submit"]').focus();
+}
+
+// Close modal button event
+closeModalBtn.addEventListener('click', hideModal);
+
+// Close modal on outside click
+modal.addEventListener('click', e => {
+  if (e.target === modal) hideModal();
+});
+
+// Handle form submission
+feedbackForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  // Disable submit button to prevent multiple submits
+  feedbackForm.querySelector('button[type="submit"]').disabled = true;
+
+  const formData = new FormData(feedbackForm);
+
+  fetch(feedbackForm.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(response => {
+      if (response.ok) {
+        feedbackForm.reset();
+        showModal();
+      } else {
+        alert('Oops! There was a problem submitting your feedback. Please try again.');
+      }
+    })
+    .catch(() => {
+      alert('Oops! There was a problem submitting your feedback. Please try again.');
+    })
+    .finally(() => {
+      feedbackForm.querySelector('button[type="submit"]').disabled = false;
+    });
+});
