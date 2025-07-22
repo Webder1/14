@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fatto a Mano Dessert Feedback</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Fatto a Mano Dessert Feedback</h1>
+    <p class="intro-text">
+      We care deeply about every scoop, sip, and sweet moment. Your honest feedback helps us craft a dessert and service experience worthy of your next visit.
+    </p>
+  </header>
+
+  <main class="container">
+    <p class="intro-paragraph">
+      Please take a moment to let us know what you loved, what could be better, and how we can make your next visit even more magical.
+    </p>
+
+    <form action="https://formspree.io/f/xdkdkryv" method="POST" id="feedbackForm" novalidate>
+      
+      <label for="dessert">Which dessert did you try?</label>
+      <select name="dessert" id="dessert" required>
+        <option value="" disabled selected>Select a dessert</option>
+        <option value="Tiramisu">Tiramisu</option>
+        <option value="Scugnizzielli Nutella & Gelato">Scugnizzielli Nutella & Gelato</option>
+        <option value="Affogato">Affogato</option>
+        <option value="Affogato Limoncello">Affogato Limoncello</option>
+        <option value="Gelato Sandwich - Lemon Meringue">Gelato Sandwich - Lemon Meringue</option>
+        <option value="Gelato Sandwich - Chocolate Salted Caramel">Gelato Sandwich - Chocolate Salted Caramel</option>
+        <option value="Gelato Sandwich - Chocolate Orange">Gelato Sandwich - Chocolate Orange</option>
+        <option value="Digestivo - Limoncello">Digestivo - Limoncello</option>
+        <option value="Digestivo - Crema di Pistachio">Digestivo - Crema di Pistachio</option>
+        <option value="Digestivo - Amaro del Capo">Digestivo - Amaro del Capo</option>
+        <option value="Digestivo - Meloncello">Digestivo - Meloncello</option>
+        <option value="Coffee - Espresso">Coffee - Espresso</option>
+        <option value="Coffee - Macchiato">Coffee - Macchiato</option>
+      </select>
+
+      <fieldset class="rating-group">
+        <legend>Rate the dessert:</legend>
+        <div class="stars" id="dessert-stars" role="radiogroup" aria-label="Dessert rating">
+          <input type="radio" id="dessert-star5" name="dessertRating" value="5" required />
+          <label for="dessert-star5" title="5 stars">★</label>
+
+          <input type="radio" id="dessert-star4" name="dessertRating" value="4" />
+          <label for="dessert-star4" title="4 stars">★</label>
+
+          <input type="radio" id="dessert-star3" name="dessertRating" value="3" />
+          <label for="dessert-star3" title="3 stars">★</label>
+
+          <input type="radio" id="dessert-star2" name="dessertRating" value="2" />
+          <label for="dessert-star2" title="2 stars">★</label>
+
+          <input type="radio" id="dessert-star1" name="dessertRating" value="1" />
+          <label for="dessert-star1" title="1 star">★</label>
+        </div>
+      </fieldset>
+
+      <label for="dessertReason">What led you to give this rating?</label>
+      <textarea name="dessertReason" id="dessertReason" placeholder="Your thoughts on the dessert" rows="3"></textarea>
+
+      <label for="dessertImprove">What could we improve to make it a 5-star experience?</label>
+      <textarea name="dessertImprove" id="dessertImprove" placeholder="Your suggestions" rows="3"></textarea>
+
+      <label for="server">Who was your server?</label>
+      <select name="server" id="server" required>
+        <option value="" disabled selected>Select your server</option>
+        <option value="Alex">Alex</option>
+        <option value="Lucia">Lucia</option>
+        <option value="Marco">Marco</option>
+        <option value="Sofia">Sofia</option>
+      </select>
+
+      <fieldset class="rating-group">
+        <legend>Rate the service:</legend>
+        <div class="stars" id="server-stars" role="radiogroup" aria-label="Server rating">
+          <input type="radio" id="server-star5" name="serverRating" value="5" required />
+          <label for="server-star5" title="5 stars">★</label>
+
+          <input type="radio" id="server-star4" name="serverRating" value="4" />
+          <label for="server-star4" title="4 stars">★</label>
+
+          <input type="radio" id="server-star3" name="serverRating" value="3" />
+          <label for="server-star3" title="3 stars">★</label>
+
+          <input type="radio" id="server-star2" name="serverRating" value="2" />
+          <label for="server-star2" title="2 stars">★</label>
+
+          <input type="radio" id="server-star1" name="serverRating" value="1" />
+          <label for="server-star1" title="1 star">★</label>
+        </div>
+      </fieldset>
+
+      <label for="serviceReason">Why did you give this rating for service?</label>
+      <textarea name="serviceReason" id="serviceReason" placeholder="Helpful, slow, super friendly?" rows="3"></textarea>
+
+      <label for="serviceImprove">How could we elevate the service to 5 stars?</label>
+      <textarea name="serviceImprove" id="serviceImprove" placeholder="Any suggestions are appreciated!" rows="3"></textarea>
+
+      <label for="email">Email (optional – for thank you or follow-up):</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" />
+
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
